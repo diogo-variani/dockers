@@ -1,33 +1,40 @@
 # Docker images for IBM Broker
 
-This repository stores Dockerfiles and samples to build Docker images for IBM Broker product.
-We only delivery the instructions and scripts to build a Docker image and container. We don't store or distribute any proprietary binaries or package neither any copyright resources.
-To build a IBM Broker image/container you have 2 options:
+This repository stores Dockerfiles and scripts to build Docker images for IBM Broker product. 
 
-Download the repo content
+## **Important:** We don't store or distribute any proprietary binaries or package neither any copyright resources.
 
-1) Usualy process
+This image/container was created for developer enviroment, it's a all-in-one, keep all softwares inside the same container.
+
+## How to build and run (Dockerfile method)
 
 docker build -t ibm/broker-8.0.0.6 .
 
 docker run -ti -v /tmp/.X11-unix:/tmp/.X11-unix --device=/dev/sda:/dev/sda -e DISPLAY=$DISPLAY --name=broker-8.0.0.6 ibm/broker:8.0.0.6
 
-Image size: 10G
+## Alternative
 
-2) Container first
+This method generates a smaller image size, 6G or almost 50% instead 10G from the traditional method.
+
+* First we create the container and map the repo folder as a volume
 
 docker run -ti -v /tmp/.X11-unix:/tmp/.X11-unix -v $(pwd):/mnt --device=/dev/sda:/dev/sda -e DISPLAY=$DISPLAY --name=broker-8.0.6 centos:6
 
-So, inside the container execute:
+So, inside the container execute the script to install the packages
 
-cd /mnt
+* cd /mnt
 
-./script-run.sh
+* ./script-run.sh
 
-Save the container as image
+To save the container as image, execute after process finish
 
-docker commit <id container> ibm/broker:8.0.0.6
+* docker commit < id container > ibm/broker:8.0.0.6
 
-<id container> docker ps -a
+## Common steps
 
-Image size: 6G
+Is necessary to disable the SELinux and xhost
+
+### On Fedora:
+
+* Edit the file: /etc/sysconfig/selinux and set the property SELINUX=disabled
+* On command line, execute: xhost +
