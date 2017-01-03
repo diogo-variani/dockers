@@ -18,13 +18,13 @@ This method generates a smaller image size, 6G or almost 50% instead 10G from th
 
 * First we create the container and map the repo folder as a volume
 
-docker run -ti -v /tmp/.X11-unix:/tmp/.X11-unix -v $(pwd):/mnt --device=/dev/sda:/dev/sda -e DISPLAY=$DISPLAY --name=broker-8.0.0.6 centos:6
+docker run -ti -v /tmp/.X11-unix:/tmp/.X11-unix -v $(pwd):/mnt/host --device=/dev/sda:/dev/sda -e DISPLAY=$DISPLAY --name=broker-8.0.0.6 centos:6
 
 So, inside the container execute the script to install the packages
 
-* cd /mnt
+* cd /mnt/host
 
-* ./script-run.sh
+* ./build-container.sh
 
 To save the container as image, execute after process finish
 
