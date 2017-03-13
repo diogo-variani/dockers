@@ -4,28 +4,25 @@
 ### YUM Multithread downloads plugin... ###
 ###########################################
 
-cp /tmp/multithread.py /usr/lib/yum-plugins/multithread.py
+cp multithread.py /usr/lib/yum-plugins/multithread.py
 
-cp /tmp/multithread.conf /etc/yum/pluginconf.d/multithread.conf
+cp multithread.conf /etc/yum/pluginconf.d/multithread.conf
 
 
 ###########################################
 ###          EPEL Repository            ###
 ###########################################
 
-rpm -ivh http://download.fedoraproject.org/pub/epel/5/x86_64/epel-release-5-4.noarch.rpm
+rpm -ivh https://dl.fedoraproject.org/pub/epel/epel-release-latest-6.noarch.rpm
 
 
 ###########################################
 ###     Prerequisites packages          ###
 ###########################################
 
-yum install -y libgtk-x11-2.0.so.0 libcanberra-gtk2.i686 libcanberra-gtk2.x86_64 \
-		PackageKit-gtk-module.i686 PackageKit-gtk-module.x86_64 \
-		compat-libstdc++-33.i686 compat-libstdc++-33.x86_64 \
-		libXtst.so.6 unzip
+yum install -y libgtk-x11-2.0.so.0 libcanberra-gtk2.i686 libcanberra-gtk2.x86_64 PackageKit-gtk-module.i686 PackageKit-gtk-module.x86_64 compat-libstdc++-33.i686 compat-libstdc++-33.x86_64 libXtst.so.6 unzip
 
-yum groupinstall -y -q Fonts &
+yum groupinstall -y Fonts
 
 
 ###########################################
