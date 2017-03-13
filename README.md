@@ -18,7 +18,6 @@ docker run -ti -v /tmp/.X11-unix:/tmp/.X11-unix --device=/dev/sda:/dev/sda -e DI
 This method generates a smaller image size, 6G or almost 50% instead 10G from the traditional method.
 
 * First we create the container and map the repo folder as a volume
-<<<<<<< HEAD
 
 docker run -ti -v /tmp/.X11-unix:/tmp/.X11-unix -v $(pwd):/mnt/host --device=/dev/sda:/dev/sda -e DISPLAY=$DISPLAY --name=broker-8.0.0.7 oraclelinux:7
 
