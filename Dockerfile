@@ -4,9 +4,9 @@
 #
 #	Disable selinux on host machine
 #
-# 	docker build -t ibm/broker:8.0.0.6 .
+# 	docker build -t ibm/broker:8.0.0.7 .
 #
-#	docker run -ti -v /tmp/.X11-unix:/tmp/.X11-unix --device=/dev/sda:/dev/sda -e DISPLAY=$DISPLAY --name=broker-8.0.0.6 ibm/broker:8.0.0.6
+#	docker run -ti -v /tmp/.X11-unix:/tmp/.X11-unix --device=/dev/sda:/dev/sda -e DISPLAY=$DISPLAY --name=broker-8.0.0.7 ibm/broker:8.0.0.7
 
 FROM centos:6
 

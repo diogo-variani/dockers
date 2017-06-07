@@ -82,8 +82,14 @@ chmod +x /tmp/fixpack/8.0.0-WS-MBX-LINUXIA32-FP0007.bin
 
 rm -f /tmp/fixpack/8.0.0-WS-MBX-LINUXIA32-FP0007.bin
 
+#######################################################
+### Configuring environment and adding woraround... ###
+#######################################################
+
 echo "-Dorg.eclipse.swt.internal.gtk.disablePrinting" >> /opt/IBM/WMBT800/eclipse.ini
 
+echo -e "\n#Message Broker Environment" >> /home/mqm/.bash_profile
+echo ". /opt/ibm/mqsi/8.0.0.7/bin/mqsiprofile" >> /home/mqm/.bash_profile 
 
 ###########################################
 ###      Removing unecessary files      ###
