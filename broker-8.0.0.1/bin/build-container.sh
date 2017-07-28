@@ -4,10 +4,6 @@
 ###       Prepare environment           ###
 ###########################################
 
-#apenas pra usar no debug
-#SRC=/tmp; MQM_HOME=/var/mqm; WMQ_INSTALL_IMAGE=${SRC}/broker8/mq; WMB_INSTALL_IMAGE=${SRC}/broker8/runtime/messagebroker_ia_runtime1; WMBX_INSTALL_IMAGE=${WMB_INSTALL_IMAGE}/MBExplorer; WMBTK_INSTALL_IMAGE=${SRC}/broker8/toolkit/disk1
-
-
 SRC=/tmp
 
 MQM_HOME=/var/mqm
@@ -24,7 +20,8 @@ groupadd mqm
 
 groupadd mqbrkrs
 
-useradd -g mqm -G mqbrkrs,wheel -d ${MQM_HOME} mqm
+useradd -g mqm -G mqbrkrs -d ${MQM_HOME} mqm
+
 
 printf ". /opt/ibm/mqsi/8.0.0.1/bin/mqsiprofile\n\n" >> ${MQM_HOME}/.bash_profile
 printf "LD_LIBRARY_PATH=/opt/mqm/java/lib:\$LD_LIBRARY_PATH\n\n" >> ${MQM_HOME}/.bash_profile

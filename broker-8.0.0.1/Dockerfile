@@ -6,9 +6,11 @@
 #
 # 	docker build -t ibm/broker:8.0.0.1 .
 #
-#	docker run -ti -v /tmp/.X11-unix:/tmp/.X11-unix -v $(pwd):/mnt/host --device=/dev/sda:/dev/sda -e DISPLAY=$DISPLAY --name=broker-8.0.0.1 -e UID=$(id -u) -e GID=$(id -g) ibm/broker:8.0.0.1
+#	docker run -ti -v /tmp/.X11-unix:/tmp/.X11-unix -e DISPLAY=$DISPLAY -e UID=$(id -u) -e GID=$(id -g) -v $(pwd):/mnt/host --name=broker-8.0.0.1 ibm/broker:8.0.0.1
 #
-#	docker exec -ti broker-8.0.0.1 /bin/bash
+#	If you need exec some command as root
+#
+#	docker exec -ti -u 0 reip-broker /bin/bash
 
 FROM centos:6
 
