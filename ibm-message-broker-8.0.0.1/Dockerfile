@@ -20,5 +20,5 @@ COPY bin /tmp/bin
 
 RUN sh /tmp/bin/build-container.sh
 
-CMD sh /var/mqm/run-container.sh ${UID} ${GID}
+# CMD sh /var/mqm/run-container.sh ${UID} ${GID}
 
