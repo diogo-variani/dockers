@@ -48,7 +48,7 @@ cp run-container.sh /var/mqm/run-container.sh
 ###     Prerequisites packages          ###
 ###########################################
 
-yum install -y libgtk-x11-2.0.so.0 libcanberra-gtk2.i686 libcanberra-gtk2.x86_64 PackageKit-gtk-module.i686 PackageKit-gtk-module.x86_64 compat-libstdc++-33.i686 compat-libstdc++-33.x86_64 libXtst.so.6
+yum install -y libgtk-x11-2.0.so.0 libcanberra-gtk2.i686 libcanberra-gtk2.x86_64 PackageKit-gtk-module.i686 PackageKit-gtk-module.x86_64 compat-libstdc++-33.i686 compat-libstdc++-33.x86_64 libXtst.so.6 util-linux-ng-2.17.2-12.28.el6.x86_64
 
 yum groupinstall -y Fonts
 
